@@ -1,0 +1,17 @@
+{
+    "Ho_ten": "Tô thị bé Hai",
+    "Ma_so": "NV_2",
+    "Ten_dang_nhap": "NV_2",
+    "Mat_khau": "NV_2",
+	  "So_lan_Dang_nhap": 0,
+    "Danh_sach_Nhom_Tivi": [
+      {
+        "Ten": "Sony",
+        "Ma_so": "SONY"
+      },
+      {
+        "Ten": "LG",
+        "Ma_so": "LG"
+      }
+    ]
+  }

@@ -1,0 +1,22 @@
+[
+    {
+        "Ma_so": "HS01",
+        "Ho_ten": "Họ tên 1",
+        "Dia_chi": "TPHCM"
+    },
+    {
+        "Ma_so": "HS02",
+        "Ho_ten": "Họ tên 2",
+        "Dia_chi": "Hà Nội"
+    },
+    {
+        "Ma_so": "HS03",
+        "Ho_ten": "Họ tên 3",
+        "Dia_chi": "Cà Mau"
+    },
+    {
+        "Ma_so": "HS05",
+        "Ho_ten": "Họ tên 5",
+        "Dia_chi": "TPHCM"
+    }
+]
