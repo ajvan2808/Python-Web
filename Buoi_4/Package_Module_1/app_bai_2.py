@@ -1,11 +1,10 @@
-from flask import Flask, render_template, request, Markup
-from Buoi_3.thu_vien.xl_tt import *
+from flask import render_template, request, Markup
+from Package_Module_1.thu_vien.xl_tt import *
+from Package_Module_1 import app                    # đã bỏ from flask import Flask và app=Flask(__name__)
 
-app = Flask(__name__)
-
-@app.route('/')
+@app.route('/xuat-thong-tin-1')
 def thong_tin_cty_1():
-    duong_dan = 'Buoi_3/du_lieu/Cong_ty.json'
+    duong_dan = 'Package_Module_1/du_lieu/Cong_ty.json'
     du_lieu = doc_file_json(duong_dan)
 
     # xuất dữ liệu từ json ra ngoài, định dạng lại dữ liệu theo html 
@@ -16,14 +15,14 @@ def thong_tin_cty_1():
 
     return render_template('Bai_2/Bai_2_1_a.html', du_lieu_output= Markup(chuoi_kq))
 
-@app.route('/page-1')
+@app.route('/xuat-thong-tin-2')
 def thong_tin_cty_2():
-    duong_dan = 'Buoi_3/du_lieu/Cong_ty.json'
+    duong_dan = 'Package_Module_1/du_lieu/Cong_ty.json'
     du_lieu = doc_file_json(duong_dan)
 
     return render_template('Bai_2/Bai_2_1_b.html', TT_cong_ty=du_lieu)
 
-@app.route('/page-2', methods=['GET', 'POST'])
+@app.route('/nhap-ho-ten-1', methods=['GET', 'POST'])
 def nhap_ho_ten_1():
     kq = ''
     if request.form.get('HoTen'):
@@ -32,7 +31,7 @@ def nhap_ho_ten_1():
             "Ho_ten": ho_ten
             }
         # Thực hiện đọc file json
-        duong_dan ='Buoi_3/du_lieu/Ho_ten.json'
+        duong_dan ='Package_Module_1/du_lieu/Ho_ten.json'
         du_lieu = ghi_file_json(duong_dan, ds_ho_ten)
         if du_lieu:
             kq = 'Đã ghi tên vào danh sách thành công.'
@@ -41,7 +40,7 @@ def nhap_ho_ten_1():
 
     return render_template('Bai_2/Bai_2_2_a.html', kq_output=kq)
 
-@app.route('/page-2-1', methods=['GET', 'POST'])
+@app.route('/nhap-ho-ten-2', methods=['GET', 'POST'])
 def chinh_sua_ho_ten():
     chuoi_kq = ''
     ho_ten = ''
@@ -49,7 +48,7 @@ def chinh_sua_ho_ten():
         ho_ten = request.form.get('HoTen')
 
         # thực hiện đọc file json
-        duong_dan = 'Buoi_3/du_lieu/Ho_ten.json'
+        duong_dan = 'Package_Module_1/du_lieu/Ho_ten.json'
         du_lieu = doc_file_json(duong_dan)
 
         # cập nhật key cho json
@@ -63,7 +62,7 @@ def chinh_sua_ho_ten():
             chuoi_kq = 'Cập nhật không thành công.'
     return render_template('Bai_2/Bai_2_2_b.html', chuoi_kq_output=chuoi_kq, HoTen = ho_ten)       # ở đây có khai báo biến ho_ten do có gán key 
 
-@app.route('/page-3', methods=['GET', 'POST'])          # luôn có lệnh methods=['GET', 'POST'] để lấy và trả về thông tin ra html
+@app.route('/dang-nhap', methods=['GET', 'POST'])          # luôn có lệnh methods=['GET', 'POST'] để lấy và trả về thông tin ra html
 def dang_nhap():
     kq = ''
     if request.form.get('Username'):
@@ -71,7 +70,7 @@ def dang_nhap():
         pass_word = request.form.get('Password').strip()
 
         # tạo đường dẫn đến file json và đọc file
-        duong_dan = 'Buoi_3/du_lieu/NV_2.json'
+        duong_dan = 'Package_Module_1/du_lieu/NV_2.json'
         ds_nv = doc_file_json(duong_dan)
 
         # xét dữ liệu đầu vô có trùng với dữ liệu trong json hay không 
@@ -81,6 +80,3 @@ def dang_nhap():
              kq = 'Mật khẩu hoặc Tên đăng nhập không chính xác!' 
 
     return render_template('Bai_2/Bai_2_3.html', chuoi_kq_output=kq)
-
-if __name__=='__main__':
-    app.run(debug=True)

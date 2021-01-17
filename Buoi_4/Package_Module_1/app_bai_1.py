@@ -1,16 +1,14 @@
-from flask import Flask, render_template, request, Markup       # để gọi các file nằm trong template, Markup dùng để ẩn html trên trình duyệt 
-# import hàm request để gửi thông tin lên server vì có dùng method POST trong html
+from flask import render_template, request, Markup       # để gọi các file nằm trong template, Markup dùng để ẩn html trên trình duyệt 
+from Package_Module_1 import app                        # import hàm request để gửi thông tin lên server vì có dùng method POST trong html
 
-app = Flask(__name__)       
+# bỏ qua bước from flask import Flask và app = Flask(__name__) vì đã quy về file init và runserver 
+# từ package bài 1 cần import app để hiểu 
 
+# @app.route('/')     --> ten mien chinh dai dien cho trang chu
+# def index():
+#     return "Test thử lần 1"
 
-@app.route('/')     # ten mien chinh dai dien cho trang chu
-def index():
-    return "Test thử lần 1"
-
-# @app.route('/in-loi-chao')              # đường dẫn tới sub-page được dẫn đến từ trang chủ phía trên 
-# def in_loi_chao():
-#     return 'Bài 1: In lời chào'
+# đường dẫn tới sub-page được dẫn đến từ trang chủ phía trên 
 
 @app.route('/in-loi-chao', methods=['GET','POST'])      # methods trong python có 's'
 def in_loi_chao():
@@ -42,8 +40,8 @@ def tinh_toan_don_gian():
         chuoi_kq = 'Thương = ' + str(so_thu_nhat) + '/' + str(so_thu_hai)+ '=' + str(thuong) + '<br>'           
     return render_template('Bai_1/Bai_1_3.html', ket_qua_output = Markup(chuoi_kq))     
 
-if __name__ =='__main__':
-    app.run(debug=True)               
+# if __name__ =='__main__':
+#     app.run(debug=True)           --> không cần vì đã được quy về file runserver     
 
 # khai báo debug=True --> khi app còn ở chế độ dev, để có thể chỉnh sửa và cập nhật
 # app.run(port=5000) --> không nhất thiết khai báo vì mặc định local host của python flask là 127.0.0.1:5000
