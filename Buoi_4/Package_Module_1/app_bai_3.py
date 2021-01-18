@@ -55,7 +55,7 @@ def tinh_diem_xet_tuyen():
 		if os.path.exists(duong_dan):
 			du_lieu = doc_file_json(duong_dan)
 			
-			cmnd = str(request.form.get('CMND'))			# số cmnd nhập vào là int nên cần chuyển thành str cho cùng định dạng với cmnd trong json
+			cmnd = str(request.form.get('CMND')).strip()			# số cmnd nhập vào là int nên cần chuyển thành str cho cùng định dạng với cmnd trong json
 			if (du_lieu['CMND']) == cmnd:
 				chuoi_kq = '<p> Họ tên thí sinh: ' + du_lieu['Ho_ten'] + '</p>'
 				chuoi_kq += '<p> Toán: ' + str(du_lieu['Toan']) + '</p>'
