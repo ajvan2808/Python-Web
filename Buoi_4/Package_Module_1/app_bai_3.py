@@ -42,3 +42,27 @@ def don_gia_ban_tivi():
 		else:
 			chuoi_kq = 'Cập nhật không thành công.'
 	return render_template('Bai_3/Bai_3_2.html', kq_output=chuoi_kq, DonGiaBan = don_gia_ban)
+
+@app.route('/tinh-diem-xet-tuyen', methods=['GET', 'POST'])
+def tinh_diem_xet_tuyen():
+	chuoi_kq = ''
+	so_bao_danh = ''
+	if request.form.get('SoBaoDanh'):
+		so_bao_danh = request.form.get('SoBaoDanh')
+		duong_dan = 'Package_Module_1/du_lieu/' + so_bao_danh + '.json'
+
+		# kiểm tra nếu đường dẫn có tồn tại trong hệ thống 
+		if os.path.exists(duong_dan):
+			du_lieu = doc_file_json(duong_dan)
+			
+			cmnd = str(request.form.get('CMND')).strip()			# số cmnd nhập vào là int nên cần chuyển thành str cho cùng định dạng với cmnd trong json
+			if (du_lieu['CMND']) == cmnd:
+				chuoi_kq = '<p> Họ tên thí sinh: ' + du_lieu['Ho_ten'] + '</p>'
+				chuoi_kq += '<p> Toán: ' + str(du_lieu['Toan']) + '</p>'
+				chuoi_kq += '<p> Văn: ' + str(du_lieu['Van']) + '</p>'
+				chuoi_kq += '<p> Anh: ' + str(du_lieu['Anh']) + '</p>'
+			else: 
+			 	chuoi_kq = 'Số CMND không chính xác.'
+		else:
+			chuoi_kq = 'Không tìm thấy số báo danh.'
+	return render_template('Bai_3/Bai_3_3.html', kq_output=Markup(chuoi_kq), SoBaoDanh= so_bao_danh)
