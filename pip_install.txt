@@ -1,1 +1,2 @@
-cmd pip install Flask
+from shell/terminal type pip install Flask
+pip is a package management for Python package or modules. 
