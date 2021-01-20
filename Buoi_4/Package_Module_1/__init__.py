@@ -6,7 +6,7 @@ import Package_Module_1.app_bai_1
 import Package_Module_1.app_bai_2
 import Package_Module_1.app_bai_3
 import Package_Module_1.app_Trang_chu
-
+import Package_Module_1.app_bai_4
 
 '''				Package trong Python  			
 - Package là 1 thư mục có thể chứa 1 hoặc nhiêù modules hay các package khác nhau 
