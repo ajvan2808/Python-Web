@@ -3,6 +3,7 @@
     "Ma_so": "NV_2",
     "Ten_dang_nhap": "NV_2",
     "Mat_khau": "NV_2",
+    "Quyen_dang_nhap": "False",
     "So_lan_Dang_nhap": 7,
     "Danh_sach_Nhom_Tivi": [
         {
