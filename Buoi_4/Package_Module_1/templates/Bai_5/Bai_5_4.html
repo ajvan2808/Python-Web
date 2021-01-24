@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title> Đăng Ký Thành Viên </title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<form method="POST">
+			<h3> Đăng Ký Thành Viên </h3>
+
+			<div class="form-group">
+				<label for="ho-ten"> Họ Tên </label>
+				<input type="text" name="HoTen" id="ho-ten" class="form-control" placeholder="Nhập vào họ tên">
+			</div>
+
+			<div class="form-group">
+				<label for="email-dn"> Email Đăng Nhập </label>
+				<input type="email" name="EmailDN" id="email-dn" class="form-control" placeholder="Nhập email đăng ký">
+			</div>
+
+			<div class="form-group">
+				<label for="mat-khau">Mật Khẩu</label>
+				<input type="password" name="MatKhau" id="mat-khau" class="form-control" placeholder="Nhập mật khẩu">
+			</div>
+
+			<div class="form-group">
+				<label for="xac-nhan-mat-khau">Xác Nhận Mật Khẩu</label>
+				<input type="password" name="XacNhanMatKhau" id="xac-nhan-mat-khau" class="form-control"
+					placeholder="Nhập lại mật khẩu">
+			</div>
+
+			<div class="form-group">
+				<h4>Giới Tính</h4>
+
+				<div class="form-check">
+					<input type="radio" class="form-check-input" name="GioiTinh" id="Nam" value="Nam" checked>
+					<label class="form-check-label"> Nam </label>
+				</div>
+
+				<div class="form-check">
+					<input type="radio" name="GioiTinh" id="Nu" value="Nữ" class="form-check-input">
+					<label class="form-check-label"> Nữ </label>
+				</div>
+
+				<div class="form-check">
+					<input type="radio" name="GioiTinh" id="Khac" value="Khác" class="form-check-input">
+					<label class="form-check-label"> Khác </label>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<label for="doi-tuong">Đối Tượng</label>
+				<select class="form-control" name="DoiTuong" id="doi-tuong">
+					<option value="HocSinh"> Học Sinh </option>
+					<option value="Đã Đi Làm"> Đã Đi Làm </option>
+					<option value="Nội trợ"> Nội Trợ </option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" name="submit-btn" id="submit-btn" class="btn btn-primary"> Submit </button>
+			</div>
+
+			<br> <br>
+			{{ Chuoi_KQ }}
+
+		</form>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
