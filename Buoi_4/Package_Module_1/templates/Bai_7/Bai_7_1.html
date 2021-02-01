@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title> Tính Tổng Đơn Bán TIVI </title>
+	<title>Thông Tin Phiếu Bán </title>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,33 +14,41 @@
 
 <body>
 	<div class="container">
-		<h3> Tính Tổng Đơn Giá Tivi</h3>
-		<p> Tên: {{ Tivi.Ten }} </p>
-		<p> Giá: {{ '{:,}'.format(Tivi.Don_gia_Ban) }} </p>
-		<p> Còn hàng: {{ Tivi.So_luong_ton }} </p>
+		<h2> Thông Tin Bán TIVI 10</h2>
 
-		<img src="/static/TIVI_1.png" class="img-fluid" alt="TIVI_1">
+		<p><strong> {{ Tivi.Ten }} </strong><p>
+		<p> Đơn giá: {{ Tivi.Don_gia_Ban}} </p>
+		<p> Số lượng: {{ Tivi.So_luong_Ton }} </p>
 
-		<form method="POST">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">STT</th>
+					<th>Ngày</th>
+					<th>Số Lượng</th>
+					<th>Tổng Tiền</th>
+				</tr>
+			</thead>
 
-			<div class="form-group">
-				<label> Số lượng </label>
-				<input type="number" class="form-control" name="SoLuong" value="{{ SoLuong }}"
-					placeholder="Nhập số lượng">
-			</div>
+			<tbody>
 
-			<button type="button" class="btn btn-primary">Thực hiện</button>
+				{% for PhieuBan in DuLieu['Danh_sach_Phieu_Ban'] %}
+				<tr>
+					<!-- PhieuBan là pt nào đó trong Danh_sach_Phieu_Ban và ta lấy index của p.tử đó + 1 -->
+					<td scope="row"> {{ DuLieu['Danh_sach_Phieu_Ban'].index(PhieuBan) +1 }} </td>
+					<td> {{ PhieuBan['Ngay'] }} </td>
+					<td> {{ PhieuBan['So_luong'] }} </td>
+					<td> {{ '{:,}'.format(PhieuBan['Tien']) }} </td>
+					<!--Tièn trong json là int nên cần chuyển về string-->
+				</tr>
 
-			<br> <br>
-			{{ Chuoi_KQ }}
+				{% endfor %}
 
+			</tbody>
+		</table>
 		</form>
+
 	</div>
-
-
-
-
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
