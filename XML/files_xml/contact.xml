@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts shelf="Danh sách Contact">
+	<contact phone="0989741258" name="Anh Thư" />
+	<contact phone="0913258963" name="Thanh Thủy" />
+	<contact phone="0934369147" name="Kim Cương" />
+	<contact phone="0915654789" name="Sơn Nam" />
+	<contact phone="0982654123" name="Mai Quý" />
+	<contact phone="0915369231" name="Tuấn Thanh" />
+	<contact phone="0934852852" name="Chu Vân" />
+	<contact phone="0907412365" name="Khang Khang" />
+	<contact phone="0909741147" name="Mai Uyên" />
+	<contact phone="0989636363" name="Thiên Tuấn" />	
+</contacts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?><!--Sample XML Document-->
+<cds>
+	<cd ten="Happy new year">		
+		<ca_sy>ABBA</ca_sy>
+		<so_bai_hat>10</so_bai_hat>
+		<gia_thanh>25000</gia_thanh>
+	</cd>
+	<cd ten="Ngày không mưa">
+		<ca_sy>Hồng Nhung</ca_sy>
+		<so_bai_hat>10</so_bai_hat>
+		<gia_thanh>250000</gia_thanh>
+	</cd>
+	<cd ten="Xuân 2017">
+		<ca_sy>Nhiều ca sỹ</ca_sy>
+		<so_bai_hat>8</so_bai_hat>
+		<gia_thanh>150000</gia_thanh>
+	</cd>
+	<cd ten="Chat với Mozart"><ca_sy>Mỹ Linh</ca_sy><so_bai_hat>6</so_bai_hat><gia_thanh>185000</gia_thanh></cd></cds>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DON_VI_S shelf="Danh sách đơn vị">
+	<DON_VI ID="1" Ten="Đơn vị A" />
+	<DON_VI ID="2" Ten="Đơn vị B" />
+	<DON_VI ID="3" Ten="Đơn vị C" />
+	<DON_VI ID="4" Ten="Đơn vị D" />
+	<DON_VI ID="5" Ten="Đơn vị E" />
+</DON_VI_S>
