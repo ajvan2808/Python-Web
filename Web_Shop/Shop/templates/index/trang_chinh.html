@@ -1,0 +1,21 @@
+<!-- trang ghép các phần html riêng biệt đã bị phân nhỏ thành trang hoàn thiện -->
+{% extends '_Master.html' %}	<!-- input phần _Master có header và footer -->
+
+{% block noi_dung_chinh %}	<!-- tên block phải đúng như đã đặt bên _Master -->
+
+{% include 'index/slider.html' %}
+<!-- End slider area -->
+
+{% include 'index/promo_area.html' %}    
+<!-- End promo area -->
+
+{% include 'index/main_content_area.html' %}
+<!-- End main content area -->
+
+{% include 'index/branding_area.html' %}
+<!-- End brands area -->
+
+{% include 'index/widget_area.html' %}
+<!-- End product widget area -->
+
+{% endblock %}

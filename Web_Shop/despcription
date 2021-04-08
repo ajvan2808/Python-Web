@@ -1,0 +1,10 @@
+1. Đặt lại tên file html được cung cấp sẵn thành _Master
+2. Cắt các phần nối dung chính thay đổi theo mục trên menu khỏi _Master
+3. Đặt lại tên file theo class html 
+4. Tạo trang app riêng cho từng phần trên menu
+5. Tách riêng html template của các phần chung như menu
+6. Đặt lại đường dẫn cho các file css, js, img 
+7. Hình background của slider nằm trong file style.css
+8. Đổi title dynamic theo title của link được load 
+9. Code JS script để các mục menu được tô đen khi users đang ở đúng trang đó 
+10. Chỉnh sửa lại href taị menu
