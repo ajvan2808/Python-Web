@@ -1,0 +1,8 @@
+{% extends '_Master.html' %}
+{% block title_tab %} Shop {% endblock %} <!-- Bên <head> <title> của _Master sẽ thay đổi khi /shop-page được load-->
+
+{% block noi_dung_chinh %}
+
+	{% include 'Shop/product_list.html' %}
+
+{% endblock %}
