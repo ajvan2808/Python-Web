@@ -2,11 +2,26 @@ from CoffeeShop.thu_vien.xl_chung import *
 from CoffeeShop.thu_vien.xl_sp import *
 from CoffeeShop.thu_vien.xl_form import *
 from datetime import datetime
-from flask_wtf.form import Form
+from flask_mail import Message, Mail
+from flask_ckeditor import CKEditor
 
 # Xử lý hình ảnh 
 UPLOAD_FOLDER = app.static_folder
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# XỬ LÝ EMAIL
+# tham số cố định trừ usernam và password
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = email 
+app.config['MAIL_PASSWORD'] = password 
+app.config['MAIL_USE_TSL'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
+# CKEDITOR 
+ckeditor = CKEditor(app)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -37,12 +52,21 @@ def dang_ky_thanh_vien():
 		mat_khau = request.form.get('MatKhau')
 		xac_nhan_mk = request.form.get('XacNhanMatKhau')
 
+		# XỬ LÝ HÌNH ẢNH 
+		f = form.HinhDaiDien.data
+		ten_hinh = f.filename 
+		if ten_hinh != '':
+			f.save(os.path.join(app.config['UPLOAD_FOLDER'] + '/nguoi_dung/' + ten_hinh))
+		else:
+			ten_hinh = 'noavatar.png'
+
 		# khởi tạo dict đối tượng 
 		thanh_vien = {
 			"Ho_ten": ho_ten,
 			"Ten_dang_nhap": ten_dang_nhap,
 			"Mat_khau": mat_khau,
-			"Xac_nhan_mat_khau": xac_nhan_mk
+			"Xac_nhan_mat_khau": xac_nhan_mk,
+			"Hinh_dai_dien": ten_hinh
 		}
 
 		# Lấy ten_dang_nhap làm tên file json 
@@ -50,6 +74,21 @@ def dang_ky_thanh_vien():
 		duong_dan = thu_muc_thanh_vien + ten_file + '.json'
 		kq = ghi_file_json(duong_dan, thanh_vien)
 		if kq:
+			msg = Message(subject='Đăng ký thành viên mới', sender=app.config['MAIL_USERNAME'],
+															recipients=[ten_dang_nhap, 'vhh2808@gmail.com'])
+			noi_dung = '<p>Chào <b>' + ho_ten + '</b> ! </p>'
+			noi_dung += '<p> Chào mừng bạn đến với cộng đồng của chúng tôi. Thông tin profile của bạn được ghi nhận trên hệ thống như sau: </p>'
+			noi_dung += '<ul>'
+			noi_dung += '<li> Tên đăng nhập: ' + ten_dang_nhap + '</li>'
+			noi_dung += '<li> Mật khẩu: ' + mat_khau + '</li>'
+			noi_dung += '</ul>'
+			noi_dung += '<p>Nếu có vấn đề cần hỗ trợ. Vui lòng liên hệ với chúng tôi nhé.</p>'
+			noi_dung += '<p> Xin cảm ơn. </p>'
+			msg.body = noi_dung 
+			msg.html = msg.body
+			mail.send(msg)
+
+
 			chuoi_kq = ''' 
 			<div class="alert alert-success" role="alert">
 			Đăng ký thành công.
@@ -95,6 +134,7 @@ def Gui_y_kien():
 			"Email": email,
 			"Dia_chi": dia_chi,
 			"Y_kien": y_kien,
+			"Hinh_anh": ten_hinh,
 			"Ngay_gui": ngay_hien_hanh.strftime('%Y-%m-%d')
 		}
 

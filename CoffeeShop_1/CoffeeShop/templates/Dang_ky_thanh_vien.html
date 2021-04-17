@@ -47,7 +47,7 @@
 		<br>
 		{{ Chuoi_KQ }}
 
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data"> <!-- trong html không có ',' -->
 			{{ Form.csrf_token }}
 
 			<div class="form-group">
@@ -59,6 +59,16 @@
 				{{ Form.TenDangNhap.label() }}
 				{{ Form.TenDangNhap(class='form-control') }}
 				{% for thong_bao in Form.TenDangNhap.errors %}
+				<small class="form-text text-muted" style="color: red !important;">
+					{{ thong_bao }}
+				</small>
+				{% endfor %}
+			</div>
+
+			<div class="form-group">
+				{{ Form.HinhDaiDien.label() }}
+				{{ Form.HinhDaiDien(class='form-control-file') }}
+				{% for thong_bao in Form.HinhDaiDien.errors %}
 				<small class="form-text text-muted" style="color: red !important;">
 					{{ thong_bao }}
 				</small>
@@ -102,6 +112,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+		
+	<!-- script for CKEditor -->
+	<script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
 </body>
 
 </html>
