@@ -1,0 +1,10 @@
+- Build web app tích hợp googlr mail, gửi mail đến senders và recipients 
+- Cần vào đường dẫn # smtplib.SMTPAuthenticationError: https://www.google.com/settings/security/lesssecureapps
+để turn on authetic 
+- Tích hợp CKeditor trình chuyển đổi văn bản html 
+- Có 2 cách tích hợp: 
+	+ Cách 1: input cdn script vào phần js script
+	+ Cách 2: download package về máy. Input và script js đường dẫn đến package và truyền đến id mong muốn.
+	
+	** Lưu ý:
+	Xoá cache để CKEditor hoạt động nếu có thay đổi mới 

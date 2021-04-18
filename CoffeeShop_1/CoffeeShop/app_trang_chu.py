@@ -10,6 +10,7 @@ UPLOAD_FOLDER = app.static_folder
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # XỬ LÝ EMAIL
+# smtplib.SMTPAuthenticationError: https://www.google.com/settings/security/lesssecureapps
 # tham số cố định trừ usernam và password
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465

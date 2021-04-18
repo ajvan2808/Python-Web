@@ -10,6 +10,7 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
 </head>
 
 <body>
@@ -81,14 +82,15 @@
 			</div>
 
 			<div class="form-group">
+				<label> Test </label>
+				<textarea id="YKien"></textarea>
+			</div>
+
+			<div class="form-group">
 				{{ Form.YKien.label() }}
 				{{ Form.YKien(class='form-control') }}
-				{% for thong_bao in Form.YKien.errors %}
-				<small class="form-text text-muted" style="color: red !important;">
-					{{ thong_bao }}
-				</small>
-				{% endfor %}
 			</div>
+
 
 			<div class="form-group">
 				{{ Form.HinhAnh.label() }}
@@ -119,6 +121,13 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+
+	<!-- cdn script for CKEditor (Cách 1) -->
+	<!-- <script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script> -->
+
+	<!-- Cài đặt đường dẫn CKEditor đã download về (Cách 2)-->
+	<script src="/static/ckeditor/ckeditor.js"></script>
+	<script> CKEDITOR.replace("YKien") </script>
 </body>
 
 </html>

@@ -20,6 +20,6 @@ class FormGuiYKien(FlaskForm):
 	DienThoai = TextField('Số điện thoại', [DataRequired()])
 	Email = TextField('Email cá nhân', [DataRequired(), Email('Email không hợp lệ!')])
 	DiaChi = TextField('Địa chỉ')
-	YKien = TextAreaField('Ý kiến đóng góp', [DataRequired()])
+	YKien = CKEditorField('Ý kiến đóng góp', [DataRequired()])		#https://ckeditor.com/cke4/addons/skins/all
 	HinhAnh = FileField('Hình ảnh', validators=[FileAllowed(['png', 'jpg', 'jpeg', 'gif'], message='Chỉ được upload file hình ảnh.')])
 	GuiYKien = SubmitField('Gửi')
