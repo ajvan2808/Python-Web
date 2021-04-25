@@ -52,7 +52,7 @@ for ma_so, gia_tri in danh_muc_san_pham.items():		# lấy từng items dict
 	#thực hiện truyền các data liên quan đến san_pham
 for san_pham in danh_sach_san_pham:
 	chuoi_sql = 'INSERT INTO SanPham VALUES (?, ?, ?, ?, ?, ?)'
-	conn.execute(chuoi_sql, (san_pham['Ma_so'], san_pham['Ten'], san_pham['Mo_ta'], san_pham['Don_gia'],
+	conn.execute(chuoi_sql, (san_pham['Ma_so'], san_pham['Ten'], san_pham['Don_gia'], san_pham['Mo_ta'],
 							san_pham['Hinh_anh'], san_pham['Danh_muc']['Ma_so'])) # trong table SanPham danh_muc được ký hiệu bằng ma_so của DanhMuc
 	conn.commit()
 

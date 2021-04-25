@@ -10,7 +10,7 @@ Cách 1: chọn tất cả thông tin từ table
 chuoi_sql = 'SELECT * FROM Hocsinh'
 '''
 # Cách 2
-chuoi_sql = 'SELECT Ma_so, Ten, Don_gia, Mo_ta, Danh_muc FROM SanPham'
+chuoi_sql = 'SELECT Ma_so, Ten, Don_gia, Mo_ta, Ma_danh_muc FROM SanPham'
 cursor = conn.execute(chuoi_sql) 
 for dong in cursor:
 	print(dong)

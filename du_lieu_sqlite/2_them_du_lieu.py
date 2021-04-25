@@ -16,14 +16,14 @@ conn.execute(chuoi_sql)
 conn.commit()
 
 # CÁCH 2
-chuoi_sql = 'INSERT INTO SanPham (Ma_so, Ten, Don_gia, Mo_ta, Danh_muc) VALUES (null, ?, ?, ?, ?, ?)'
-conn.execute(chuoi_sql, (ma_so, ten, 29000, "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ đô cà phê nhưng vẫn thơm ngon, chất lừ không kém!", ""))
-conn.commit()
+# chuoi_sql = 'INSERT INTO SanPham (Ma_so, Ten, Don_gia, Mo_ta, Danh_muc) VALUES (null, ?, ?, ?, ?, ?)'
+# conn.execute(chuoi_sql, (ma_so, ten, 29000, "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ đô cà phê nhưng vẫn thơm ngon, chất lừ không kém!", ""))
+# conn.commit()
 
-# CÁCH 3
-chuoi_sql = 'INSERT INTO SanPham (Ma_so, Ten, Don_gia, Mo_ta, Danh_muc) VALUES (?, ?, ?, ?, ?)'
-conn.execute(chuoi_sql, (ma_so, ten, 29000, "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ đô cà phê nhưng vẫn thơm ngon, chất lừ không kém!", ""))
-conn.commit()
+# # CÁCH 3
+# chuoi_sql = 'INSERT INTO SanPham (Ma_so, Ten, Don_gia, Mo_ta, Danh_muc) VALUES (?, ?, ?, ?, ?)'
+# conn.execute(chuoi_sql, (ma_so, ten, 29000, "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ đô cà phê nhưng vẫn thơm ngon, chất lừ không kém!", ""))
+# conn.commit()
 
 # Ngắt kết nối với database
 conn.close()
