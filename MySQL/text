@@ -1,3 +1,8 @@
 - Cài đặt server giả lập MAMP 
 - Tạo database và table trên PHP MyAdmin 
 - MySQL là 1 trong số các hệ thống quản trị cơ sở dữ liệu mã nguồn mở 
+
+# Buổi 5 
+- pip install flask-sqlalchemy
+- pip3 install pymysql 
+- pip install flask-admin 
